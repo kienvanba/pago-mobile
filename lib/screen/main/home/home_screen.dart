@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:pago_mobile/screen/base/base_screen.dart';
 import 'package:pago_mobile/screen/main/home/home_controller.dart';
 import 'package:pago_mobile/screen/main/home/widgets/menu.dart';
+import 'package:pago_mobile/screen/main/home/widgets/news_item.dart';
+import 'package:pago_mobile/screen/main/news/news_screen.dart';
 import 'package:pago_mobile/utils/utils.dart';
 import 'package:pago_mobile/widget/infinite_slider.dart';
 
@@ -55,19 +57,26 @@ class HomeScreen extends BaseScreen<HomeController> {
                 ),
               ),
               SizedBox(height: PagoDimen.common),
-              InfiniteSlider(
-                itemCount: 5,
-                builder: (context, index) => Card(
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(PagoDimen.common),
-                  ),
-                  child: Container(
-                    child: Center(
-                      child: Text("$index"),
-                    ),
-                  ),
-                ),
+              Obx(
+                () => controller.newsList.isNotEmpty
+                    ? InfiniteSlider(
+                        itemCount: controller.newsList.length,
+                        builder: (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: PagoDimen.small,
+                          ),
+                          child: NewsItem(
+                            news: controller.newsList[index],
+                            onPressed: (news) {
+                              Get.to(
+                                () => NewsScreen(news: news),
+                                transition: Transition.fadeIn,
+                              );
+                            },
+                          ),
+                        ),
+                      )
+                    : SizedBox.shrink(),
               ),
             ],
           ),

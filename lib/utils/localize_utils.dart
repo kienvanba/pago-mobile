@@ -13,6 +13,9 @@ const localizedData = {
 
   // home
   "praying_for": "Bạn đang mong cầu điều gì?",
+
+  // error
+  "invalid_account": "Tên đăng nhập hoặc mật khẩu không chính xác.",
 };
 
 extension Localized on String {

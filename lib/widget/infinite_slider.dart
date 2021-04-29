@@ -49,7 +49,7 @@ class _SliderState extends State<InfiniteSlider> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 16 / 9,
+      aspectRatio: 16 / 8,
       child: PageView.builder(
         controller: _pageController,
         itemBuilder: (context, index) {

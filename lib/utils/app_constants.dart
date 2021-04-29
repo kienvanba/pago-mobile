@@ -30,8 +30,32 @@ class PagoTextStyle {
     fontWeight: FontWeight.bold,
     color: PagoColor.text,
   );
+  static const h2 = TextStyle(
+    fontSize: PagoDimen.x4,
+    fontWeight: FontWeight.bold,
+    color: PagoColor.text,
+  );
+  static const h3 = TextStyle(
+    fontSize: PagoDimen.x3,
+    fontWeight: FontWeight.bold,
+    color: PagoColor.text,
+  );
+  static const h4 = TextStyle(
+    fontSize: PagoDimen.x2,
+    fontWeight: FontWeight.w700,
+    color: PagoColor.text,
+  );
+  static const h5 = TextStyle(
+    fontSize: PagoDimen.common,
+    fontWeight: FontWeight.w600,
+    color: PagoColor.text,
+  );
   static const h6 = TextStyle(
     fontWeight: FontWeight.w600,
+  );
+  static const subtile = TextStyle(
+    fontWeight: FontWeight.w400,
+    color: PagoColor.text,
   );
   static var qoute = TextStyle(
     fontStyle: FontStyle.italic,
