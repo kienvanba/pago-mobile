@@ -4,6 +4,7 @@ import 'package:pago_mobile/screen/base/base_screen.dart';
 import 'package:pago_mobile/screen/main/home/home_controller.dart';
 import 'package:pago_mobile/screen/main/home/widgets/menu.dart';
 import 'package:pago_mobile/utils/utils.dart';
+import 'package:pago_mobile/widget/infinite_slider.dart';
 
 import 'widgets/calendar.dart';
 
@@ -53,7 +54,21 @@ class HomeScreen extends BaseScreen<HomeController> {
                   },
                 ),
               ),
-              Container(height: 200),
+              SizedBox(height: PagoDimen.common),
+              InfiniteSlider(
+                itemCount: 5,
+                builder: (context, index) => Card(
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(PagoDimen.common),
+                  ),
+                  child: Container(
+                    child: Center(
+                      child: Text("$index"),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
