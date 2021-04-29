@@ -10,6 +10,9 @@ const localizedData = {
   // calendar
   "today": "Hôm nay",
   "zodiac_hour": "Giờ hoàng đạo",
+
+  // home
+  "praying_for": "Bạn đang mong cầu điều gì?",
 };
 
 extension Localized on String {
